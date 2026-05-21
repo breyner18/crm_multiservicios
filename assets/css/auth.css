@@ -1,0 +1,267 @@
+/* VARIABLES CON LA PALETA DE TU LANDING PAGE */
+:root {
+    --bg-gradient: linear-gradient(135deg, #07163c 0%, #102a6b 50%, #d9531e 100%);
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-white: #ffffff;
+    --text-muted: #a0aec0;
+    --primary-orange: #ff5722;
+    --primary-orange-hover: #e04817;
+    --input-bg: rgba(255, 255, 255, 0.08);
+}
+
+/* FONDO GENERAL EN DEGRADADO */
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: var(--text-white);
+}
+
+/* CONTENEDOR PRINCIPAL EN DOS COLUMNAS */
+.container-login {
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 20px;
+}
+
+/* SECCIÓN HERO (IZQUIERDA) */
+.hero-text {
+    flex: 1;
+    max-width: 450px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+}
+
+.hero-text .mision {
+    color: var(--primary-orange);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* BOTÓN DE LA TARJETA EN EL HERO */
+.btn-card {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-white);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-white);
+    transform: translateY(-2px);
+}
+
+/* TARJETA DE LOGIN GLASSMORPHISM (DERECHA) */
+.login-card {
+    flex: 1;
+    max-width: 420px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* LOGO Y TEXTO DE CABECERA */
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.login-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 5px 0 0 0;
+}
+
+/* INPUTS ESTILO MODERNO */
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-white);
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 40px 12px 45px !important;
+    background: var(--input-bg) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 12px !important;
+    color: var(--text-white) !important;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: var(--primary-orange) !important;
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.25) !important;
+    outline: none;
+}
+
+/* INTERRUPTOR OJO CONTRASEÑA */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.1rem;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    color: var(--text-white);
+}
+
+/* ENLACE RECUPERAR CLAVE */
+.forgot-link {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.forgot-link:hover {
+    color: #ff7a50;
+    text-decoration: underline;
+}
+
+/* BOTÓN ENTRAR (NARANJA) */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-orange);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+
+.btn-login:hover {
+    background: var(--primary-orange-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+}
+
+/* BOTÓN REGISTRARSE (OUTLINE) */
+.btn-register {
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn-register:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* RESPONSIVE DESIGN (Pantallas móviles) */
+@media (max-width: 768px) {
+    .container-login {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .hero-text {
+        text-align: center;
+        max-width: 100%;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+}
