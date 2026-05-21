@@ -3,12 +3,12 @@
 // Buscamos el archivo de conexión de forma segura usando __DIR__
 include(__DIR__ . "/../config/conexion.php");
 
-// Recibimos los datos enviados desde el formulario HTML
-$nombres   = $_POST['nombres'];
-$apellidos = $_POST['apellidos'];
-$documento = $_POST['documento'];
-$correo    = $_POST['correo'];
-$password  = $_POST['password'];
+// Recibimos los datos aplicando trim() para limpiar espacios vacíos accidentales
+$nombres   = trim($_POST['nombres']);
+$apellidos = trim($_POST['apellidos']);
+$documento = trim($_POST['documento']);
+$correo    = trim($_POST['correo']);
+$password  = $_POST['password']; // A la contraseña NO se le hace trim si el usuario decidió usar un espacio como clave
 $plan      = $_POST['plan'];
 
 // 🔥 ENCRIPTAR CONTRASEÑA (Por seguridad)
