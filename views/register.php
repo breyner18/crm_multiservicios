@@ -78,6 +78,7 @@
                     <div class="input-icon">
                         <i class="bi bi-stars"></i>
                         <select name="plan" class="form-control">
+                            <option value="BASICO">BASICO</option>
                             <option value="ESTANDAR">ESTANDAR</option>
                             <option value="VIP">VIP</option>
                         </select>
